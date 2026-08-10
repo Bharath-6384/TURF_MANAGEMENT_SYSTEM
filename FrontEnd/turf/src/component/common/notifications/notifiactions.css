@@ -1,0 +1,705 @@
+.notifications-page{
+    width:100%;
+    min-height:100vh;
+    padding:1.5rem;
+}
+
+.notifications-container{
+    max-width:1500px;
+    margin:0 auto;
+}
+
+.notifications-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:1.5rem;
+    margin-bottom:1.5rem;
+}
+
+.notifications-title{
+    display:flex;
+    align-items:center;
+    gap:1rem;
+}
+
+.notifications-title h1{
+    font-size:2rem;
+    font-weight:700;
+    color:#1a1a1a;
+    margin-bottom:.2rem;
+    line-height:1.15;
+}
+
+.notifications-title p{
+    color:#6b6b6b;
+    font-size:.9rem;
+}
+
+.mark-all-button{
+    display:flex;
+    align-items:center;
+    gap:.5rem;
+    padding:.7rem 1.3rem;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    background:#27c66d;
+    color:#fff;
+    font-size:.9rem;
+    font-weight:600;
+    transition:.3s;
+}
+
+.mark-all-button:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 24px rgba(39,198,109,.28);
+}
+
+.notification-filter{
+    display:flex;
+    gap:.75rem;
+    margin-bottom:1.5rem;
+}
+
+.notification-filter button{
+    padding:.55rem 1.2rem;
+    border-radius:10px;
+    border:1px solid rgba(0,0,0,.1);
+    background:#ffffff;
+    color:#1a1a1a;
+    font-size:.9rem;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+    display:flex;
+    align-items:center;
+    gap:.5rem;
+}
+
+.notification-filter button.active{
+    background:#27c66d;
+    border-color:#27c66d;
+    color:#fff;
+}
+
+.notification-filter button span{
+    background:rgba(0,0,0,.08);
+    padding:.05rem .5rem;
+    border-radius:10px;
+    font-size:.75rem;
+}
+
+.notification-filter button.active span{
+    background:rgba(255,255,255,.25);
+}
+
+.notification-body{
+    display:grid;
+    grid-template-columns:2.1fr .9fr;
+    gap:1.5rem;
+    align-items:start;
+}
+
+.notifications-list{
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
+}
+
+.notification-card{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:1.5rem;
+    padding:1.1rem 1.3rem;
+    border-radius:16px;
+    background:#ffffff;
+    border:1px solid rgba(0,0,0,.08);
+    transition:.3s;
+    cursor:pointer;
+}
+
+.notification-card:hover{
+    transform:translateY(-2px);
+    border-color:rgba(39,198,109,.35);
+    box-shadow:0 14px 28px rgba(0,0,0,.08);
+}
+
+.notification-card.unread{
+    border-left:4px solid #27c66d;
+}
+
+.notification-left{
+    display:flex;
+    align-items:flex-start;
+    gap:1rem;
+    flex:1;
+    min-width:0;
+}
+
+.notification-icon.booking,
+.notification-icon.success,
+.notification-icon.warning,
+.notification-icon.info{
+    background:#27c66d;
+}
+
+.notification-content{
+    flex:1;
+    min-width:0;
+}
+
+.notification-top{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:.6rem;
+    margin-bottom:.3rem;
+}
+
+.notification-top h4{
+    color:#1a1a1a;
+    font-size:1rem;
+    font-weight:700;
+}
+
+.notification-dot{
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:#27c66d;
+}
+
+.notification-content p{
+    color:#5a5a5a;
+    line-height:1.5;
+    margin-bottom:.6rem;
+    font-size:.9rem;
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+}
+
+.notification-card.expanded .notification-content p{
+    overflow:visible;
+}
+
+.notification-footer{
+    display:flex;
+    gap:1.1rem;
+    flex-wrap:wrap;
+}
+
+.notification-footer span{
+    display:flex;
+    align-items:center;
+    gap:.4rem;
+    color:#6b6b6b;
+    font-size:.82rem;
+}
+
+.notification-toggle-icon{
+    color:#9a9a9a;
+    font-size:1.1rem;
+    flex-shrink:0;
+    margin-top:.35rem;
+    transition:transform .25s ease;
+}
+
+.notification-card.expanded .notification-toggle-icon{
+    transform:rotate(180deg);
+    color:#27c66d;
+}
+
+.notifications-side-card{
+    position:sticky;
+    top:1.5rem;
+    padding:1.5rem;
+    border-radius:18px;
+    background:#ffffff;
+    border:1px solid rgba(0,0,0,.08);
+    text-align:center;
+}
+
+.notification-image{
+    width:100%;
+    max-width:180px;
+    display:block;
+    margin:0 auto 1.2rem;
+}
+
+.notifications-side-card h2{
+    color:#1a1a1a;
+    font-size:1.5rem;
+    margin-bottom:.7rem;
+}
+
+.notifications-side-card p{
+    color:#666666;
+    line-height:1.6;
+    margin-bottom:1.4rem;
+    font-size:.88rem;
+}
+
+.side-card-info{
+    display:flex;
+    flex-direction:column;
+    gap:.7rem;
+}
+
+.side-info-item{
+    display:flex;
+    align-items:center;
+    gap:.8rem;
+    padding:.75rem;
+    border-radius:12px;
+    background:rgba(0,0,0,.03);
+    text-align:left;
+    transition:.3s;
+}
+
+.side-info-item svg{
+    color:#27c66d;
+    font-size:1.2rem;
+}
+
+.side-info-item strong{
+    display:block;
+    color:#1a1a1a;
+    margin-bottom:.15rem;
+    font-size:.9rem;
+}
+
+.side-info-item span{
+    color:#777777;
+    font-size:.8rem;
+}
+
+.side-info-item:hover{
+    transform:translateX(6px);
+    background:rgba(0,0,0,.06);
+}
+
+.notifications-empty-list{
+    padding:3.5rem 1.5rem;
+    border-radius:18px;
+    text-align:center;
+    background:#ffffff;
+    border:1px solid rgba(0,0,0,.08);
+}
+
+.notifications-empty-list h3{
+    color:#1a1a1a;
+    font-size:1.5rem;
+    margin-bottom:.4rem;
+}
+
+.notifications-empty-list p{
+    color:#777777;
+    font-size:.9rem;
+}
+
+/* ===========================
+   Search
+=========================== */
+
+.notification-search{
+    width:100%;
+    height:46px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:20px;
+    padding:0 16px;
+    border-radius:12px;
+    background:#ffffff;
+    border:1px solid rgba(0,0,0,.1);
+}
+
+.notification-search svg{
+    color:#8c8c8c;
+    font-size:17px;
+}
+
+.notification-search input{
+    flex:1;
+    height:100%;
+    border:none;
+    outline:none;
+    background:transparent;
+    color:#1a1a1a;
+    font-size:14px;
+}
+
+.notification-search input::placeholder{
+    color:#999999;
+}
+
+/* ===========================
+   Scrollbar
+=========================== */
+
+.notifications-list{
+    max-height:calc(100vh - 300px);
+    overflow-y:auto;
+    padding-right:6px;
+}
+
+.notifications-list::-webkit-scrollbar{
+    width:6px;
+}
+
+.notifications-list::-webkit-scrollbar-track{
+    background:transparent;
+}
+
+.notifications-list::-webkit-scrollbar-thumb{
+    background:rgba(0,0,0,.15);
+    border-radius:20px;
+}
+
+.notifications-list::-webkit-scrollbar-thumb:hover{
+    background:rgba(0,0,0,.28);
+}
+
+/* ===========================
+   Card Animation
+=========================== */
+
+.notification-card{
+    animation:notificationFade .35s ease;
+}
+
+@keyframes notificationFade{
+    from{
+        opacity:0;
+        transform:translateY(16px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ===========================
+   Status Dot
+=========================== */
+
+.notification-status{
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    margin-top:22px;
+    background:#27c66d;
+    flex-shrink:0;
+}
+
+.notification-card:not(.unread) .notification-status{
+    background:#c2c2c2;
+}
+
+/* ===========================
+   Time
+=========================== */
+
+.notification-time{
+    color:#8f8f8f;
+    font-size:12px;
+    white-space:nowrap;
+}
+
+/* ===========================
+   Side Card Animation
+=========================== */
+
+.notifications-side-card img{
+    transition:.4s ease;
+}
+
+.notifications-side-card:hover img{
+    transform:translateY(-6px) scale(1.03);
+}
+
+/* ===========================
+   Hover Effects
+=========================== */
+
+.notification-filter button:hover{
+    border-color:#27c66d;
+}
+
+.mark-all-button:active{
+    transform:scale(.96);
+}
+
+/* ===========================
+   Loading
+=========================== */
+
+.notifications-loading{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:70vh;
+    font-size:20px;
+    font-weight:600;
+    color:#1a1a1a;
+}
+
+/* ===========================
+   Error
+=========================== */
+
+.notifications-error{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:70vh;
+    font-size:16px;
+    color:#ff6b6b;
+}
+
+/* ===========================
+   Stats Row
+=========================== */
+
+.notifications-stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1rem;
+    margin-bottom:1.25rem;
+}
+
+.stat-card{
+    display:flex;
+    align-items:center;
+    gap:.9rem;
+    padding:1rem 1.2rem;
+    border-radius:16px;
+    background:#ffffff;
+    border:1px solid rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.stat-card:hover{
+    transform:translateY(-2px);
+    border-color:rgba(39,198,109,.35);
+    box-shadow:0 14px 28px rgba(0,0,0,.08);
+}
+
+.stat-icon{
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    font-size:1.1rem;
+    color:#27c66d;
+    background:rgba(39,198,109,.14);
+    border:1px solid rgba(39,198,109,.3);
+}
+
+.stat-info{
+    flex:1;
+    min-width:0;
+}
+
+.stat-info h4{
+    color:#6b6b6b;
+    font-size:.82rem;
+    font-weight:500;
+    margin-bottom:.25rem;
+}
+
+.stat-info h2{
+    color:#1a1a1a;
+    font-size:1.5rem;
+    font-weight:700;
+    line-height:1.1;
+    margin-bottom:.2rem;
+}
+
+.stat-info span{
+    color:#8a8a8a;
+    font-size:.75rem;
+}
+
+.stat-chart{
+    display:flex;
+    align-items:flex-end;
+    gap:3px;
+    height:26px;
+    flex-shrink:0;
+}
+
+.stat-chart i{
+    display:block;
+    width:4px;
+    border-radius:2px;
+    background:#27c66d;
+    opacity:.85;
+}
+
+@media(max-width:1200px){
+    .notifications-stats{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:640px){
+    .notifications-stats{
+        grid-template-columns:1fr;
+    }
+
+    .stat-chart{
+        display:none;
+    }
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media(max-width:1100px){
+    .notification-body{
+        grid-template-columns:1fr;
+    }
+
+    .notifications-side-card{
+        position:relative;
+        top:0;
+    }
+}
+
+@media(max-width:768px){
+    .notifications-page{
+        padding:14px;
+    }
+
+    .notifications-header{
+        flex-direction:column;
+        gap:16px;
+    }
+
+    .notifications-title{
+        align-items:center;
+    }
+
+    .notifications-title h1{
+        font-size:1.5rem;
+    }
+
+    .notification-filter{
+        width:100%;
+    }
+
+    .notification-filter button{
+        flex:1;
+        justify-content:center;
+    }
+
+    .notification-card{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:16px;
+    }
+
+    .notification-left{
+        width:100%;
+    }
+
+    .notification-toggle-icon{
+        align-self:flex-end;
+        margin-top:-1.5rem;
+    }
+}
+
+@media(max-width:520px){
+    .notifications-page{
+        padding:10px;
+    }
+
+    .notifications-title{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .notifications-title h1{
+        font-size:1.3rem;
+    }
+
+    .notification-left{
+        flex-direction:column;
+    }
+
+    .notifications-side-card{
+        padding:18px;
+    }
+
+    .notification-image{
+        max-width:150px;
+    }
+}
+
+.stat-chart i:nth-child(1){
+    height:35%;
+}
+
+.stat-chart i:nth-child(2){
+    height:55%;
+}
+
+.stat-chart i:nth-child(3){
+    height:45%;
+}
+
+.stat-chart i:nth-child(4){
+    height:75%;
+}
+
+.stat-chart i:nth-child(5){
+    height:95%;
+}
+
+.stat-card--unread .stat-chart i:nth-child(1){
+    height:40%;
+}
+
+.stat-card--unread .stat-chart i:nth-child(2){
+    height:60%;
+}
+
+.stat-card--unread .stat-chart i:nth-child(3){
+    height:50%;
+}
+
+.stat-card--unread .stat-chart i:nth-child(4){
+    height:85%;
+}
+
+.stat-card--unread .stat-chart i:nth-child(5){
+    height:100%;
+}
+
+.stat-card--today .stat-chart i:nth-child(1){
+    height:30%;
+}
+
+.stat-card--today .stat-chart i:nth-child(2){
+    height:50%;
+}
+
+.stat-card--today .stat-chart i:nth-child(3){
+    height:65%;
+}
+
+.stat-card--today .stat-chart i:nth-child(4){
+    height:80%;
+}
+
+.stat-card--today .stat-chart i:nth-child(5){
+    height:100%;
+}

@@ -1,0 +1,48 @@
+.app-logo {
+    position: fixed;
+    top: 18px;
+    left: 28px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    z-index: 1000;
+}
+
+.app-logo img {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    background: #ffffff;
+    padding: 6px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.15);
+    object-fit: contain;
+}
+
+.app-logo div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.app-logo h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 22px;
+    font-weight: 700;
+    color: #16a34a;
+    line-height: 1.1;
+}
+
+.app-logo span {
+    margin: 3px 0 0;
+    padding: 0;
+    font-size: 13px;
+    color:#64748b;
+    line-height: 1.2;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

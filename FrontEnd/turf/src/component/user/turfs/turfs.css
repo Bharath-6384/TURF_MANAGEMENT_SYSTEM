@@ -1,0 +1,565 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Inter",sans-serif;
+}
+
+.turfs-page{
+    min-height:100vh;
+    background:#f5f7fb;
+    padding:20px;
+}
+
+/* ---------- Header ---------- */
+
+.turfs-header{
+    width:100%;
+    min-height:230px;
+    margin-bottom:18px;
+    padding:30px 36px;
+    display:flex;
+    align-items:center;
+    position:relative;
+    overflow:hidden;
+    border-radius:20px;
+    background:url("../../../assets/turfs.png") center/cover no-repeat;
+    background-color:#0b2b1c;
+    box-shadow:
+        0 10px 30px rgba(15,23,42,.10),
+        0 2px 12px rgba(22,163,74,.06);
+}
+
+.turfs-header::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:1;
+    background:linear-gradient(
+        100deg,
+        rgba(4,20,12,.55) 0%,
+        rgba(4,20,12,.30) 40%,
+        rgba(4,20,12,0) 70%
+    );
+}
+
+.turfs-header-content{
+    position:relative;
+    z-index:2;
+    width:100%;
+    max-width:460px;
+}
+
+.turfs-header-tag{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    background:rgba(74,222,128,.16);
+    border:1px solid rgba(74,222,128,.35);
+    color:#86efac;
+    font-size:.66rem;
+    font-weight:700;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+    padding:5px 12px;
+    border-radius:999px;
+    margin-bottom:12px;
+}
+
+.turfs-header h1{
+    font-size:1.9rem;
+    font-weight:800;
+    color:#ffffff;
+    line-height:1.15;
+    margin-bottom:8px;
+    text-shadow:0 2px 12px rgba(0,0,0,.35);
+}
+
+.turfs-header h1 span{
+    color:#4ade80;
+}
+
+.turfs-header p{
+    max-width:380px;
+    font-size:.86rem;
+    color:#e5e9ef;
+    line-height:1.5;
+    margin-bottom:18px;
+    text-shadow:0 1px 6px rgba(0,0,0,.3);
+}
+
+.turfs-header-badges{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px 26px;
+}
+
+.turfs-header-badge{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.turfs-header-badge-icon{
+    width:28px;
+    height:28px;
+    flex-shrink:0;
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.18);
+    color:#4ade80;
+    font-size:.85rem;
+}
+
+.turfs-header-badge-text{
+    display:flex;
+    flex-direction:column;
+    line-height:1.25;
+}
+
+.turfs-header-badge-text strong{
+    font-size:.76rem;
+    font-weight:700;
+    color:#ffffff;
+}
+
+.turfs-header-badge-text small{
+    font-size:.66rem;
+    color:rgba(255,255,255,.68);
+}
+
+.turfs-header-image{
+    display:none;
+}
+
+/* ---------- Category pills ---------- */
+
+.turfs-categories{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:18px;
+}
+
+.turfs-category-pill{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    padding:8px 14px;
+    border-radius:999px;
+    border:1px solid #e5e7eb;
+    background:#ffffff;
+    color:#4b5563;
+    font-size:.8rem;
+    font-weight:600;
+    cursor:pointer;
+    transition:all .25s ease;
+}
+
+.turfs-category-pill svg{
+    font-size:.95rem;
+}
+
+.turfs-category-pill:hover{
+    border-color:#d7eadc;
+    color:#16a34a;
+}
+
+.turfs-category-pill.active{
+    background:linear-gradient(135deg,#16a34a,#22c55e);
+    border-color:transparent;
+    color:#ffffff;
+    box-shadow:0 8px 18px rgba(22,163,74,.24);
+}
+
+/* ---------- Loading / error ---------- */
+
+.turfs-loading,
+.turfs-error{
+    min-height:60vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:1rem;
+    font-weight:600;
+    color:#374151;
+}
+
+/* ---------- Cards grid ---------- */
+
+.turfs-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+}
+
+.turfs-card{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    background:#ffffff;
+    border:1px solid #e8ecef;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:
+        0 6px 18px rgba(15,23,42,.06),
+        0 2px 6px rgba(22,163,74,.04);
+    transition:all .3s ease;
+}
+
+.turfs-card:hover{
+    transform:translateY(-5px);
+    border-color:#d7eadc;
+    box-shadow:
+        0 14px 28px rgba(15,23,42,.10),
+        0 8px 16px rgba(22,163,74,.08);
+}
+
+.turfs-image-wrapper{
+    position:relative;
+    width:100%;
+    height:165px;
+    overflow:hidden;
+    background:#edf2f7;
+}
+
+.turfs-image-wrapper::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.22),
+        transparent 45%
+    );
+    pointer-events:none;
+}
+
+.turfs-image{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:transform .45s ease;
+}
+
+.turfs-card:hover .turfs-image{
+    transform:scale(1.06);
+}
+
+.turfs-placeholder{
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#eef7f1,#ddeee3);
+    color:#6b7280;
+    font-size:.85rem;
+    font-weight:600;
+}
+
+.turfs-like-button{
+    position:relative;
+    align-self:flex-start;
+    margin:-20px 0 0 16px;
+    z-index:3;
+    width:38px;
+    height:38px;
+    border:none;
+    border-radius:50%;
+    background:#ffffff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#1f2937;
+    font-size:1.05rem;
+    cursor:pointer;
+    box-shadow:0 6px 14px rgba(0,0,0,.16);
+    transition:all .2s ease;
+}
+
+.turfs-like-button:hover{
+    transform:scale(1.08);
+}
+
+.turfs-like-button.liked{
+    color:#ef4444;
+}
+
+.turfs-active-badge{
+    position:absolute;
+    top:14px;
+    right:14px;
+    z-index:2;
+    background:#16a34a;
+    color:#ffffff;
+    font-size:.75rem;
+    font-weight:700;
+    letter-spacing:.3px;
+    padding:6px 16px;
+    border-radius:999px;
+    box-shadow:0 4px 10px rgba(0,0,0,.15);
+}
+
+.turfs-details{
+    display:flex;
+    flex-direction:column;
+    flex:1;
+    padding:6px 18px 18px;
+}
+
+.turfs-details h3{
+    font-size:1.12rem;
+    font-weight:700;
+    color:#111827;
+    margin-bottom:6px;
+}
+
+.turfs-location{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    margin-bottom:18px;
+    color:#6b7280;
+    font-size:.86rem;
+}
+
+.turfs-location svg{
+    color:#16a34a;
+    font-size:1rem;
+    flex-shrink:0;
+}
+
+.turfs-footer-row{
+    margin-top:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+}
+
+.turfs-prices{
+    display:flex;
+    gap:20px;
+}
+
+.turfs-price-block{
+    display:flex;
+    flex-direction:column;
+}
+
+.turfs-price-title{
+    font-size:.7rem;
+    font-weight:600;
+    color:#9ca3af;
+    text-transform:uppercase;
+    letter-spacing:.4px;
+    margin-bottom:4px;
+}
+
+.turfs-price-block h4{
+    display:flex;
+    align-items:baseline;
+    gap:3px;
+    font-size:1.1rem;
+    font-weight:800;
+    color:#16a34a;
+}
+
+.turfs-price-block h4 small{
+    font-size:.72rem;
+    font-weight:600;
+    color:#9ca3af;
+}
+
+.turfs-book-button{
+    flex-shrink:0;
+    border:none;
+    border-radius:12px;
+    padding:13px 26px;
+    background:linear-gradient(135deg,#16a34a,#22c55e);
+    color:#ffffff;
+    font-size:.92rem;
+    font-weight:700;
+    cursor:pointer;
+    transition:all .3s ease;
+    white-space:nowrap;
+}
+
+.turfs-book-button:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 18px rgba(22,163,74,.24);
+}
+
+.turfs-book-button:active{
+    transform:scale(.98);
+}
+
+.turfs-inactive-badge{
+    position:absolute;
+    top:16px;
+    right:16px;
+    padding:6px 14px;
+    border-radius:999px;
+    background:#ef4444;
+    color:#ffffff;
+    font-size:12px;
+    font-weight:600;
+    text-transform:capitalize;
+}
+
+.turfs-book-button-disabled{
+    cursor:not-allowed;
+    background:#d1d5db;
+    color:#6b7280;
+    box-shadow:none;
+}
+
+.turfs-book-button-disabled:hover{
+    transform:none;
+    background:#d1d5db;
+    color:#6b7280;
+}
+
+/* ---------- Responsive ---------- */
+
+@media(max-width:1100px){
+
+    .turfs-page{
+        padding:18px;
+    }
+
+    .turfs-header{
+        min-height:210px;
+        padding:26px;
+    }
+
+    .turfs-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:16px;
+    }
+
+    .turfs-image-wrapper{
+        height:140px;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .turfs-page{
+        padding:16px;
+    }
+
+    .turfs-header{
+        min-height:auto;
+        padding:30px 24px;
+        border-radius:20px;
+        margin-bottom:18px;
+    }
+
+    .turfs-header-content{
+        max-width:100%;
+    }
+
+    .turfs-header h1{
+        font-size:1.9rem;
+    }
+
+    .turfs-header p{
+        font-size:.9rem;
+        max-width:100%;
+    }
+
+    .turfs-header-badges{
+        gap:16px;
+    }
+
+    .turfs-categories{
+        flex-wrap:nowrap;
+        overflow-x:auto;
+        padding-bottom:4px;
+    }
+
+    .turfs-category-pill{
+        white-space:nowrap;
+    }
+
+    .turfs-grid{
+        grid-template-columns:1fr;
+        gap:16px;
+    }
+
+    .turfs-card{
+        border-radius:14px;
+    }
+
+    .turfs-image-wrapper{
+        height:180px;
+    }
+
+    .turfs-details{
+        padding:6px 16px 16px;
+    }
+
+    .turfs-details h3{
+        font-size:1rem;
+    }
+
+    .turfs-footer-row{
+        flex-wrap:wrap;
+    }
+
+    .turfs-book-button{
+        width:100%;
+        text-align:center;
+    }
+
+}
+
+@media(max-width:480px){
+
+    .turfs-page{
+        padding:14px;
+    }
+
+    .turfs-header{
+        padding:24px 18px;
+        border-radius:16px;
+    }
+
+    .turfs-header h1{
+        font-size:1.6rem;
+    }
+
+    .turfs-header p{
+        font-size:.86rem;
+        line-height:1.6;
+    }
+
+    .turfs-header-badges{
+        gap:14px;
+    }
+
+    .turfs-header-badge-text strong{
+        font-size:.78rem;
+    }
+
+    .turfs-header-badge-text small{
+        font-size:.68rem;
+    }
+
+    .turfs-image-wrapper{
+        height:160px;
+    }
+
+    .turfs-prices{
+        gap:14px;
+    }
+
+}

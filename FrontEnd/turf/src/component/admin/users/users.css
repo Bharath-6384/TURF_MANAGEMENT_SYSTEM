@@ -1,0 +1,123 @@
+.users-page {
+    padding: 2rem;
+    background: #f5f7fb;
+    min-height: 100vh;
+}
+
+.users-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.users-header h2 {
+    margin: 0;
+    color: #1f2937;
+}
+
+.users-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: .75rem;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0,0,0,.08);
+}
+
+.users-table th {
+    background: #1e40af;
+    color: white;
+    padding: 1rem;
+    text-align: left;
+}
+
+.users-table td {
+    padding: .9rem 1rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.users-table tr:hover {
+    background: #f9fafb;
+}
+
+.users-loading,
+.users-error {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1rem;
+}
+
+.users-detail-actions {
+  margin-top: 24px;
+}
+
+.users-edit-btn {
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  padding: 13px;
+  background: #111;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.users-edit-btn:hover {
+  background: #27944f;
+}
+
+.users-detail-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.users-edit-btn,
+.users-save-btn,
+.users-cancel-btn {
+  border: none;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.users-edit-btn,
+.users-save-btn {
+  background: #22c55e;
+  color: #fff;
+}
+
+.users-edit-btn:hover,
+.users-save-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.85;
+}
+
+.users-cancel-btn {
+  background: #e5e5e5;
+  color: #222;
+}
+
+.users-cancel-btn:hover {
+  background: #d5d5d5;
+}
+
+.users-edit-input {
+  width: 100%;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  padding: 9px 11px;
+  font-size: 14px;
+  outline: none;
+  background: #fff;
+}
+
+.users-edit-input:focus {
+  border-color: #111;
+}

@@ -1,0 +1,476 @@
+.landing-page {
+  min-height: 100vh;
+  background: #050706;
+  color: #f5f7f5;
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+}
+
+.landing-page * {
+  box-sizing: border-box;
+}
+
+.landing-page a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ================= HEADER ================= */
+
+.landing-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  height: 88px;
+  padding: 0 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(5, 7, 6, 0.18);
+  backdrop-filter: blur(4px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.landing-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 20px;
+  letter-spacing: 3px;
+}
+
+.landing-brand-logo {
+  width: 36px;
+  height: 36px;
+  display: block;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.landing-navigation {
+  display: flex;
+  align-items: center;
+  gap: 38px;
+  font-size: 13px;
+  color: #9aa6a0;
+}
+
+.landing-navigation a {
+  transition: color 0.2s ease;
+}
+
+.landing-navigation a:hover {
+  color: #4ade80;
+}
+
+.landing-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.landing-login-button,
+.landing-signup-button {
+  border: none;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.landing-login-button {
+  padding: 12px 18px;
+  background: transparent;
+  color: #9aa6a0;
+}
+
+.landing-login-button:hover {
+  color: #ffffff;
+}
+
+.landing-signup-button {
+  padding: 12px 20px;
+  border-radius: 6px;
+  background: #16a34a;
+  color: #04140a;
+}
+
+.landing-signup-button:hover {
+  background: #4ade80;
+}
+
+/* ================= HERO ================= */
+
+.landing-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  background-image: url("../../../assets/stadium.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.landing-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(3, 5, 4, 0.82) 0%,
+    rgba(3, 5, 4, 0.45) 40%,
+    rgba(3, 5, 4, 0.65) 70%,
+    rgba(3, 5, 4, 0.98) 100%
+  );
+}
+
+.landing-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 20%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+}
+
+.landing-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 140px 24px 100px;
+}
+
+.landing-hero-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 34px;
+  color: #9aa6a0;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 18px;
+  letter-spacing: 4px;
+}
+
+.landing-logo {
+  width: 90px;
+  height: 90px;
+  display: block;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.landing-hero-content h1 {
+  margin: 0;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(68px, 11vw, 150px);
+  line-height: 0.88;
+  letter-spacing: -14px;
+  color: #f5f7f5;
+}
+
+.landing-hero-description {
+  max-width: 500px;
+  margin: 30px auto 36px;
+  color: #a7b0aa;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.landing-hero-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.landing-primary-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 30px;
+  border: none;
+  border-radius: 6px;
+  background: #16a34a;
+  color: #04140a;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.landing-primary-button:hover {
+  background: #4ade80;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(22, 163, 74, 0.35);
+}
+
+.landing-scroll-indicator {
+  position: absolute;
+  z-index: 3;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: #68756d;
+  font-family: "Space Mono", monospace;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.landing-scroll-indicator svg {
+  color: #4ade80;
+}
+
+/* ================= COMMON ================= */
+
+.landing-section {
+  padding: 120px 0;
+}
+
+.landing-container {
+  width: min(1200px, calc(100% - 64px));
+  margin: 0 auto;
+}
+
+.landing-section-heading {
+  max-width: 620px;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+
+.landing-kicker {
+  display: block;
+  margin-bottom: 14px;
+  color: #16a34a;
+  font-family: "Space Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.landing-section-heading h2 {
+  margin: 0;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(42px, 5vw, 64px);
+  line-height: 0.95;
+  letter-spacing: 2px;
+}
+
+.landing-section-heading p {
+  max-width: 520px;
+  margin: 20px auto 0;
+  color: #9aa6a0;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* ================= SPORTS ================= */
+
+.landing-sports-section {
+  background: #050706;
+}
+
+.landing-sports-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 14px;
+}
+
+.landing-sport-card {
+  padding: 30px 14px;
+  border: 1px solid #1c2620;
+  border-radius: 14px;
+  background: #0e1310;
+  text-align: center;
+  transition: all 0.25s ease;
+}
+
+.landing-sport-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(22, 163, 74, 0.5);
+  background: #131b16;
+}
+
+.landing-sport-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 16px;
+  font-size: 32px;
+}
+
+.landing-sport-card h3 {
+  margin: 0 0 7px;
+  font-size: 14px;
+}
+
+.landing-sport-card span {
+  color: #5c6a63;
+  font-family: "Space Mono", monospace;
+  font-size: 10px;
+}
+
+/* ================= HOW IT WORKS ================= */
+
+.landing-how-section {
+  background: #080b09;
+}
+
+.landing-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.landing-step-card {
+  padding: 32px 28px;
+  border: 1px solid #1c2620;
+  border-radius: 16px;
+  background: linear-gradient(145deg, #0e1310, #050706);
+}
+
+.landing-step-number {
+  display: block;
+  margin-bottom: 20px;
+  color: #16a34a;
+  font-family: "Space Mono", monospace;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.landing-step-card h3 {
+  margin: 0 0 12px;
+  font-size: 19px;
+}
+
+.landing-step-card p {
+  margin: 0;
+  color: #9aa6a0;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* ================= CTA ================= */
+
+.landing-cta-section {
+  background: #050706;
+}
+
+.landing-cta-card {
+  position: relative;
+  padding: 80px 32px;
+  overflow: hidden;
+  border: 1px solid rgba(22, 163, 74, 0.3);
+  border-radius: 24px;
+  background: radial-gradient(
+      circle at 50% 0%,
+      rgba(22, 163, 74, 0.22),
+      transparent 60%
+    ),
+    #0b1510;
+  text-align: center;
+}
+
+.landing-cta-card h2 {
+  margin: 0;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(44px, 6vw, 72px);
+  line-height: 0.9;
+}
+
+.landing-cta-card p {
+  max-width: 480px;
+  margin: 20px auto 30px;
+  color: #9aa6a0;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* ================= FOOTER ================= */
+
+.landing-footer {
+  padding: 48px 32px 30px;
+  border-top: 1px solid #1c2620;
+  text-align: center;
+}
+
+.landing-footer .landing-brand {
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.landing-footer p {
+  margin: 0;
+  color: #5c6a63;
+  font-size: 12px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1000px) {
+  .landing-navigation {
+    display: none;
+  }
+
+  .landing-header {
+    padding: 0 24px;
+  }
+
+  .landing-sports-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .landing-container {
+    width: min(100% - 32px, 1200px);
+  }
+
+  .landing-section {
+    padding: 80px 0;
+  }
+
+  .landing-sports-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .landing-steps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .landing-actions {
+    gap: 4px;
+  }
+
+  .landing-login-button {
+    display: none;
+  }
+
+  .landing-hero-content h1 {
+    font-size: clamp(58px, 17vw, 100px);
+  }
+
+  .landing-hero-logo {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .landing-logo {
+    width: 80px;
+    height: 80px;
+  }
+}
